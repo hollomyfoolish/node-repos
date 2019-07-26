@@ -1,0 +1,26 @@
+{
+  "name": "repos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hollomyfoolish/node-repos.git"
+  },
+  "keywords": [
+    "node",
+    "repos"
+  ],
+  "author": "hollomyfoolish@163.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hollomyfoolish/node-repos/issues"
+  },
+  "homepage": "https://github.com/hollomyfoolish/node-repos#readme",
+  "dependencies": {
+    "async-listener": "^0.6.10"
+  }
+}
