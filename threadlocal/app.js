@@ -17,29 +17,36 @@ let threadLocal = {
 };
 process.addAsyncListener({
     create: () => {
+        fs.writeSync(1, `\n==========create start============\n`);
         idx++;
         fs.writeSync(1, `create idx: ${idx}\n`);
         try{
             if(!threadLocal.active.hasOwnProperty('name')){
+                fs.writeSync(1, `create thead name is null, is a new object\n`);
                 threadLocal.active.name = 'No.' + idx;
             }
             fs.writeSync(1, `create threadLocal.active.name: ${threadLocal.active.name}\n`);
         }catch(e){
             fs.writeSync(1, `error in create: ${e}\n`);
         }
+        fs.writeSync(1, `==========create end============\n\n`);
         return threadLocal.active;
     },
     before: (context, storage) => { 
+        fs.writeSync(1, `\n==========before start============\n`);
         if (storage) {
             threadLocal.active = storage;
             fs.writeSync(1, `before threadLocal.active.name: ${threadLocal.active.name}\n`);
-      }
+        }
+        fs.writeSync(1, `==========before end============\n\n`);
     },
     after: (context, storage) => {
+        fs.writeSync(1, `\n==========after start============\n`);
         fs.writeSync(1, `after threadLocal.active.name: ${storage.name}\n`);
         if (storage) {
             threadLocal.active = {};
         }
+        fs.writeSync(1, `==========after end============\n\n`);
     }
   });
 

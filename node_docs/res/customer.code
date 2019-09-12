@@ -1,0 +1,3 @@
+
+send('customer code');
+console.log(cname);

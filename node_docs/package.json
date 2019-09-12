@@ -1,0 +1,15 @@
+{
+  "name": "node_docs",
+  "version": "1.0.0",
+  "description": "node documentation test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "documentation"
+  ],
+  "author": "hollomyfoolish@163.com",
+  "license": "MIT"
+}

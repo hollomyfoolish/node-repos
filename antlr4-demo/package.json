@@ -1,0 +1,24 @@
+{
+  "name": "antlr4-demo",
+  "version": "1.0.0",
+  "description": "demo of antlr4 for js",
+  "main": "index.js",
+  "scripts": {
+    "run-antlr4": "antlr4 --version",
+    "antlr4-bundle": "webpack --config webpack.config.bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "antlr4",
+    "js"
+  ],
+  "author": "hollomyfoolish@163.com",
+  "license": "MIT",
+  "dependencies": {
+    "antlr4": "^4.7.2"
+  },
+  "devDependencies": {
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7"
+  }
+}
