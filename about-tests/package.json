@@ -6,6 +6,7 @@
   "scripts": {
     "test": "node node_modules/jasmine/bin/jasmine.js spec/**/*.spec.js",
     "test:watch": "nodemon --exec jasmine spec/**/*.spec.js",
+    "test:karma": "karma start",
     "mutation-test": "node node_modules/@stryker-mutator/core/bin/stryker run"
   },
   "keywords": [
@@ -20,6 +21,9 @@
     "@stryker-mutator/html-reporter": "^2.1.0",
     "@stryker-mutator/javascript-mutator": "^2.1.0",
     "jasmine": "^3.3.1",
+    "karma": "^4.3.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-jasmine": "^2.0.1",
     "nodemon": "^1.19.2"
   },
   "dependencies": {}
