@@ -1,19 +1,16 @@
 module.exports = function (config) {
   config.set({
     basePath: '',
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'allentests'],
     files: [
-      'node_modules/angular/angular.min.js',
-      'node_modules/angular-route/angular-route.min.js',
-      'node_modules/angular-mocks/angular-mocks.js',
       'src/*.js',
       'src/**/*.js',
-      'test/**/*.js'
+      'spec/**/*.js'
     ],
     preprocessors: {
-      'src/**/*.js': ['coverage']
+      // 'src/**/*.js': ['coverage']
     },
-    reporters: ['progress', 'coverage'],
+    reporters: ['progress'],// 'coverage'],
     coverageReporter: {
       type: 'html',
       dir: 'reports/coverage/',
