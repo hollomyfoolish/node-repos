@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        li{
+            list-style: none;
+        }
+        ol{
+            padding: 0;
+        }
+        #screen{
+            width: 50%;
+            margin: auto;
+            margin-top: 100px;
+            background-color: gray;
+        }
+        #screen li{
+            margin-top: 2px;
+            text-align: right;
+            background-color: green;
+            /* transition: width 0.5s; */
+        }
+        #next{
+            width: 80px;
+            height: 36px;
+            border-radius: 15px;
+            outline: none;
+            cursor: pointer;
+        }
+    </style>
+    <title>Animation for Sort Algorithm</title>
+    <script src="sort.js"></script>
+</head>
+<body>
+    <button id="next">Next</button>
+    <ol id="screen">
+    </ol>
+</body>
+<script>
+    let screen = document.querySelector('#screen');
+    let btn = document.querySelector('#next');
+    let firstDraw = true;
+    let regx = /width: (\d+)%/;
+    let draw = function(data){
+        if(firstDraw){
+            let htmls = [];
+            for(let s of data){
+                htmls.push(`<li style="width: ${s}%;">${s}</li>`);
+            }
+            screen.innerHTML = htmls.join('');
+            firstDraw = false;
+            return;
+        }
+        document.querySelectorAll('#screen li').forEach((li, idx) => {
+            let cssTxt = li.style.cssText;
+            if(parseInt(regx.exec(cssTxt)[1]) != data[idx]){
+                li.style.cssText = `width: ${data[idx]}%;`;
+                li.innerHTML = data[idx];
+            }
+        });
+    }
+    let next = new Sorter().insert().drawwer(draw).animate(() => alert('done'));
+    btn.addEventListener('click', next, false);
+</script>
+</html>
